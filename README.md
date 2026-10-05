@@ -33,7 +33,7 @@ This is normal. Codespaces is spinning up a virtual computer for you in the clou
 
 **6\. You're ready**
 
-When the browser tab opens to VS Code, open the `style.css` file in the file explorer on the left. You'll see the base styles are already written for you, followed by a series of commented-out **STEP** blocks. That's your starting point — we'll uncomment and write the grid together in class.
+When the browser tab opens to VS Code, open the `style.css` file in the file explorer on the left. The base styles are already written for you, and each rule has **STEP** comments showing where the grid properties go. That's your starting point — we'll type the grid code together in class, one step at a time.
 
 ---
 

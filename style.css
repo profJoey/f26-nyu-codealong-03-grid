@@ -22,6 +22,20 @@ h3 {
   line-height: 1.2;
 }
 
+/* ============================================================
+   🧪 CSS GRID CODE-ALONG
+   ============================================================
+   Follow along with your instructor. We'll type the grid
+   properties into the rules below, one step at a time.
+
+   After each step, save the file and refresh your browser
+   (or let Live Server refresh it for you) to see the change.
+
+   Each step is marked with a STEP comment. Type the property
+   shown in the comment into the rule it belongs to.
+   ============================================================ */
+
+
 /* === THE PAGE (HOLY GRAIL) === */
 .page {
   background: #fff;
@@ -33,6 +47,53 @@ h3 {
      this number to match. */
   min-height: calc(100vh - 4rem);
   padding: 1rem;
+
+  /* ------------------------------------------------------------
+     STEP 1 — Turn on Grid
+     ------------------------------------------------------------
+     Type the line below. Nothing will look different yet —
+     a grid with no columns defined is just a single column.
+     We'll fix that in Step 2.
+     ------------------------------------------------------------ */
+  /* display: grid; */
+
+
+  /* ------------------------------------------------------------
+     STEP 2 — Define Your Columns
+     ------------------------------------------------------------
+     Type the line below. The page snaps into three columns.
+     The middle column (main) gets 3fr — three times the share
+     of the side columns — so it ends up about 60% of the width
+     while nav and aside stay narrow.
+
+     Try changing the values:
+         1fr 3fr 1fr   |   1fr 2fr 1fr   |   1fr 1fr 1fr
+     ------------------------------------------------------------ */
+  /* grid-template-columns: 1fr 3fr 1fr; */
+
+
+  /* ------------------------------------------------------------
+     STEP 3 — Add Rows and Gaps
+     ------------------------------------------------------------
+     Type both lines below. Try different gap values:
+         10px   |   20px   |   40px
+     ------------------------------------------------------------ */
+  /* grid-template-rows: auto 1fr auto; */
+  /* gap: 16px; */
+
+
+  /* ------------------------------------------------------------
+     STEP 5 — Name Your Areas (the holy grail payoff)
+     ------------------------------------------------------------
+     This is the magic trick. Instead of counting columns, you
+     draw the layout with words. Type the block below.
+
+     Try rearranging the words to move regions around!
+     ------------------------------------------------------------ */
+  /* grid-template-areas:
+       "header header header"
+       "nav    main   aside"
+       "footer footer footer"; */
 }
 
 /* === PAGE REGIONS === */
@@ -48,22 +109,47 @@ h3 {
 
 .header {
   background: #e06c75;
+
+  /* ------------------------------------------------------------
+     STEP 4 — Span Items Across Tracks
+     ------------------------------------------------------------
+     The header and footer should stretch across all three
+     columns. Type the line below, then do the same in .footer.
+
+     Try:  span 2   |   span 3   |   1 / -1
+     ------------------------------------------------------------ */
+  /* grid-column: 1 / -1; */
+
+
+  /* ------------------------------------------------------------
+     STEP 5 — Assign the Header to Its Area
+     ------------------------------------------------------------
+     Now that we've named the areas in .page, tell each region
+     which area it belongs to. Type the line below, then repeat
+     in .nav, .main, .aside, and .footer.
+     ------------------------------------------------------------ */
+  /* grid-area: header; */
 }
 
 .nav {
   background: #61afef;
+  /* grid-area: nav; */
 }
 
 .main {
   background: #98c379;
+  /* grid-area: main; */
 }
 
 .aside {
   background: #e5c07b;
+  /* grid-area: aside; */
 }
 
 .footer {
   background: #c678dd;
+  /* grid-column: 1 / -1; */
+  /* grid-area: footer; */
 }
 
 .nav ul {
@@ -77,6 +163,34 @@ h3 {
 /* === THE CARD GALLERY (lives inside .main) === */
 .cards {
   margin-top: 1.5rem;
+
+  /* ------------------------------------------------------------
+     STEP 6 — Responsive Cards, No Media Queries
+     ------------------------------------------------------------
+     Our second use case. Type the lines below, then resize your
+     browser window — the cards reflow on their own.
+
+     How does this work? Read the line right-to-left:
+
+       minmax(200px, 1fr)  →  each column is AT LEAST 200px wide,
+                              but can grow to share leftover space
+       repeat(...)         →  make as many of those columns as fit
+       auto-fit            →  fit as many as possible, then collapse
+                              any empty tracks
+
+     So the browser does the math on every resize:
+       wide screen  → 6 columns (all cards in one row)
+       medium       → 3 columns (cards wrap to two rows)
+       narrow       → 1 column  (cards stack)
+
+     No @media breakpoints needed. That's the whole point.
+
+     Try changing the numbers:
+         minmax(200px, 1fr)   |   minmax(150px, 1fr)
+     ------------------------------------------------------------ */
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  /* gap: 16px; */
 }
 
 .card {
@@ -93,6 +207,24 @@ h3 {
   margin-top: 1rem;
   padding-top: 0.75rem;
   border-top: 1px solid #ddd;
+
+  /* ------------------------------------------------------------
+     STEP 7 — Grid and Flex, Working Together
+     ------------------------------------------------------------
+     Grid and flex aren't rivals — they're teammates. The rule
+     of thumb: GRID for the layout, FLEX for the components
+     inside it.
+
+     This row has a tag on the left and a link on the right.
+     That's a one-dimensional row, so it's a job for flex.
+     Type the lines below and try:
+
+         justify-content: space-between  |  flex-start  |  center
+         align-items: center  |  flex-start  |  flex-end
+     ------------------------------------------------------------ */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
 
 .tag {
@@ -103,155 +235,3 @@ h3 {
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
 }
-
-/* ============================================================
-   🧪 CSS GRID PLAYGROUND — STEP BY STEP
-   ============================================================
-   Follow along with your instructor.
-   Uncomment each block one at a time and change the values.
-   Refresh your browser after each change to see what happens!
-
-   💡 Keyboard shortcut to comment / uncomment a line:
-        Mac:  Cmd + /
-        PC:   Ctrl + /
-   Select a line or block and tap the shortcut to toggle.
-   ============================================================ */
-
-
-/* ------------------------------------------------------------
-   STEP 1 — Turn on Grid
-   ------------------------------------------------------------
-   Uncomment the block below. Nothing looks different yet —
-   that's because a grid with no columns defined is just a
-   single column. We'll fix that in Step 2.
-   ------------------------------------------------------------ */
-
-
-/* .page {
-  display: grid;
-} */
-
-
-/* ------------------------------------------------------------
-   STEP 2 — Define Your Columns
-   ------------------------------------------------------------
-   Now uncomment this block. The page snaps into three columns.
-   The middle column (main) gets 3fr — three times the share of
-   the side columns — so it ends up about 60% of the width while
-   nav and aside stay narrow.
-
-   Try changing the values:
-       1fr 3fr 1fr   |   1fr 2fr 1fr   |   1fr 1fr 1fr
-   ------------------------------------------------------------ */
-
-
-/* .page {
-  grid-template-columns: 1fr 3fr 1fr;
-} */
-
-
-/* ------------------------------------------------------------
-   STEP 3 — Add Rows and Gaps
-   ------------------------------------------------------------
-   Uncomment and try different gap values: 10px  20px  40px
-   ------------------------------------------------------------ */
-
-
-/* .page {
-  grid-template-rows: auto 1fr auto;
-  gap: 16px;
-} */
-
-
-/* ------------------------------------------------------------
-   STEP 4 — Span Items Across Tracks
-   ------------------------------------------------------------
-   The header and footer should stretch across all three columns.
-   Uncomment below and try:  span 2  |  span 3  |  1 / -1
-   ------------------------------------------------------------ */
-
-
-/* .header,
-.footer {
-  grid-column: 1 / -1;
-} */
-
-
-/* ------------------------------------------------------------
-   STEP 5 — Name Your Areas (the holy grail payoff)
-   ------------------------------------------------------------
-   This is the magic trick. Instead of counting columns, you
-   draw the layout with words. Uncomment BOTH blocks below.
-
-   Try rearranging the words to move regions around!
-   ------------------------------------------------------------ */
-
-
-/* .page {
-  grid-template-areas:
-    "header header header"
-    "nav    main   aside"
-    "footer footer footer";
-} */
-
-
-/* .header { grid-area: header; }
-.nav    { grid-area: nav; }
-.main   { grid-area: main; }
-.aside  { grid-area: aside; }
-.footer { grid-area: footer; } */
-
-
-/* ------------------------------------------------------------
-   STEP 6 — Responsive Cards, No Media Queries
-   ------------------------------------------------------------
-   Our second use case. Uncomment below, then resize your
-   browser window — the cards reflow on their own.
-
-   How does this work? Read the line right-to-left:
-
-     minmax(200px, 1fr)  →  each column is AT LEAST 200px wide,
-                            but can grow to share leftover space
-     repeat(...)         →  make as many of those columns as fit
-     auto-fit            →  fit as many as possible, then collapse
-                            any empty tracks
-
-   So the browser does the math on every resize:
-     wide screen  → 6 columns (all cards in one row)
-     medium       → 3 columns (cards wrap to two rows)
-     narrow       → 1 column  (cards stack)
-
-   No @media breakpoints needed. That's the whole point.
-
-   Try changing the numbers:
-       minmax(200px, 1fr)   |   minmax(150px, 1fr)
-   ------------------------------------------------------------ */
-
-
-/* .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-} */
-
-
-/* ------------------------------------------------------------
-   STEP 7 — Grid and Flex, Working Together
-   ------------------------------------------------------------
-   Grid and flex aren't rivals — they're teammates. The rule of
-   thumb: GRID for the layout, FLEX for the components inside it.
-
-   Each card has a "card-footer" row with a tag on the left and
-   a link on the right. That's a one-dimensional row, so it's a
-   job for flex. Uncomment below and try:
-
-       justify-content: space-between  |  flex-start  |  center
-       align-items: center  |  flex-start  |  flex-end
-   ------------------------------------------------------------ */
-
-
-/* .card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
