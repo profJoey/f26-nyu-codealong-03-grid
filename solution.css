@@ -1,0 +1,103 @@
+/* === RESET === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === PAGE STYLING === */
+body {
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #f0f0f0;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+/* === THE PAGE (HOLY GRAIL) === */
+.page {
+  background: #fff;
+  border: 3px solid #333;
+  border-radius: 8px;
+  min-height: 400px;
+  padding: 1rem;
+
+  /* --- Grid properties (all active) --- */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  grid-template-areas:
+    "header header header"
+    "nav    main   aside"
+    "footer footer footer";
+}
+
+/* === PAGE REGIONS === */
+.header,
+.nav,
+.main,
+.aside,
+.footer {
+  padding: 1rem;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.header {
+  background: #e06c75;
+  grid-area: header;
+}
+
+.nav {
+  background: #61afef;
+  grid-area: nav;
+}
+
+.main {
+  background: #98c379;
+  grid-area: main;
+}
+
+.aside {
+  background: #e5c07b;
+  grid-area: aside;
+}
+
+.footer {
+  background: #c678dd;
+  grid-area: footer;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav a {
+  color: #fff;
+}
+
+/* === THE CARD GALLERY === */
+.cards {
+  margin-top: 2rem;
+
+  /* --- Responsive grid, no media queries --- */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 3px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+}
