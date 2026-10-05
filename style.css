@@ -123,18 +123,23 @@ h3 {
 
 .nav {
   background: #61afef;
+  /* STEP 5 — grid-area: nav; */
 }
 
 .main {
   background: #98c379;
+  /* STEP 5 — grid-area: main; */
 }
 
 .aside {
   background: #e5c07b;
+  /* STEP 5 — grid-area: aside; */
 }
 
 .footer {
   background: #c678dd;
+  /* STEP 4 — grid-column: 1 / -1; */
+  /* STEP 5 — grid-area: footer; */
 }
 
 .nav ul {
