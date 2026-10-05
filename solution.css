@@ -32,7 +32,7 @@ h3 {
 
   /* --- Grid properties (all active) --- */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto 1fr auto;
   gap: 16px;
   grid-template-areas:
