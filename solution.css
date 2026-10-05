@@ -85,9 +85,9 @@ h3 {
   color: #fff;
 }
 
-/* === THE CARD GALLERY === */
+/* === THE CARD GALLERY (lives inside .main) === */
 .cards {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 
   /* --- Responsive grid, no media queries --- */
   display: grid;
@@ -100,4 +100,5 @@ h3 {
   border: 3px solid #333;
   border-radius: 8px;
   padding: 1rem;
+  color: #333;
 }
