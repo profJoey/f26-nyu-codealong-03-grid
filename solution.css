@@ -34,11 +34,17 @@ h3 {
   min-height: calc(100vh - 4rem);
   padding: 1rem;
 
-  /* --- Grid properties (all active) --- */
+  /* STEP 1 — Turn on Grid */
   display: grid;
+
+  /* STEP 2 — Define Your Columns */
   grid-template-columns: 1fr 3fr 1fr;
+
+  /* STEP 3 — Add Rows and Gaps */
   grid-template-rows: auto 1fr auto;
   gap: 16px;
+
+  /* STEP 5 — Name Your Areas */
   grid-template-areas:
     "header header header"
     "nav    main   aside"
@@ -58,26 +64,37 @@ h3 {
 
 .header {
   background: #e06c75;
+
+  /* STEP 4 — Span Items Across Tracks */
+  grid-column: 1 / -1;
+
+  /* STEP 5 — Assign the Header to Its Area */
   grid-area: header;
 }
 
 .nav {
   background: #61afef;
+  /* STEP 5 — grid-area: nav; */
   grid-area: nav;
 }
 
 .main {
   background: #98c379;
+  /* STEP 5 — grid-area: main; */
   grid-area: main;
 }
 
 .aside {
   background: #e5c07b;
+  /* STEP 5 — grid-area: aside; */
   grid-area: aside;
 }
 
 .footer {
   background: #c678dd;
+  /* STEP 4 — grid-column: 1 / -1; */
+  grid-column: 1 / -1;
+  /* STEP 5 — grid-area: footer; */
   grid-area: footer;
 }
 
@@ -93,7 +110,7 @@ h3 {
 .cards {
   margin-top: 1.5rem;
 
-  /* --- Responsive grid, no media queries --- */
+  /* STEP 6 — Responsive Cards, No Media Queries */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
@@ -114,7 +131,7 @@ h3 {
   padding-top: 0.75rem;
   border-top: 1px solid #ddd;
 
-  /* --- Flexbox: grid for the layout, flex for the component --- */
+  /* STEP 7 — Grid and Flex, Working Together */
   display: flex;
   justify-content: space-between;
   align-items: center;
