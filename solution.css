@@ -27,6 +27,10 @@ h3 {
   background: #fff;
   border: 3px solid #333;
   border-radius: 8px;
+  /* Fill the viewport height. The 4rem subtracts the body's
+     2rem top + 2rem bottom padding so the page doesn't overflow
+     and cause a scrollbar. If you change body's padding, update
+     this number to match. */
   min-height: calc(100vh - 4rem);
   padding: 1rem;
 
