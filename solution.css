@@ -27,12 +27,12 @@ h3 {
   background: #fff;
   border: 3px solid #333;
   border-radius: 8px;
-  min-height: 400px;
+  min-height: calc(100vh - 4rem);
   padding: 1rem;
 
   /* --- Grid properties (all active) --- */
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: auto 1fr auto;
   gap: 16px;
   grid-template-areas:

@@ -27,7 +27,7 @@ h3 {
   background: #fff;
   border: 3px solid #333;
   border-radius: 8px;
-  min-height: 400px;
+  min-height: calc(100vh - 4rem);
   padding: 1rem;
 }
 
@@ -115,16 +115,17 @@ h3 {
    STEP 2 — Define Your Columns
    ------------------------------------------------------------
    Now uncomment this block. The page snaps into three columns.
-   The middle column (main) gets 2fr — twice the share of the
-   side columns — so it ends up about half the total width.
+   The middle column (main) gets 3fr — three times the share of
+   the side columns — so it ends up about 60% of the width while
+   nav and aside stay narrow.
 
    Try changing the values:
-       1fr 2fr 1fr   |   1fr 1fr 1fr   |   200px 1fr 200px
+       1fr 3fr 1fr   |   1fr 2fr 1fr   |   1fr 1fr 1fr
    ------------------------------------------------------------ */
 
 
 /* .page {
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
 } */
 
 
