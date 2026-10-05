@@ -25,14 +25,14 @@ h3 {
 /* ============================================================
    🧪 CSS GRID CODE-ALONG
    ============================================================
-   Follow along with your instructor. We'll type the grid
+   Follow along with your instructor. We'll write the grid
    properties into the rules below, one step at a time.
 
    After each step, save the file and refresh your browser
    (or let Live Server refresh it for you) to see the change.
 
-   Each step is marked with a STEP comment. Type the property
-   shown in the comment into the rule it belongs to.
+   Each step is marked with a STEP comment. Read the comment,
+   then type the property into the rule it belongs to.
    ============================================================ */
 
 
@@ -55,7 +55,6 @@ h3 {
      a grid with no columns defined is just a single column.
      We'll fix that in Step 2.
      ------------------------------------------------------------ */
-  /* display: grid; */
 
 
   /* ------------------------------------------------------------
@@ -69,7 +68,6 @@ h3 {
      Try changing the values:
          1fr 3fr 1fr   |   1fr 2fr 1fr   |   1fr 1fr 1fr
      ------------------------------------------------------------ */
-  /* grid-template-columns: 1fr 3fr 1fr; */
 
 
   /* ------------------------------------------------------------
@@ -78,8 +76,6 @@ h3 {
      Type both lines below. Try different gap values:
          10px   |   20px   |   40px
      ------------------------------------------------------------ */
-  /* grid-template-rows: auto 1fr auto; */
-  /* gap: 16px; */
 
 
   /* ------------------------------------------------------------
@@ -90,10 +86,6 @@ h3 {
 
      Try rearranging the words to move regions around!
      ------------------------------------------------------------ */
-  /* grid-template-areas:
-       "header header header"
-       "nav    main   aside"
-       "footer footer footer"; */
 }
 
 /* === PAGE REGIONS === */
@@ -118,7 +110,6 @@ h3 {
 
      Try:  span 2   |   span 3   |   1 / -1
      ------------------------------------------------------------ */
-  /* grid-column: 1 / -1; */
 
 
   /* ------------------------------------------------------------
@@ -128,28 +119,22 @@ h3 {
      which area it belongs to. Type the line below, then repeat
      in .nav, .main, .aside, and .footer.
      ------------------------------------------------------------ */
-  /* grid-area: header; */
 }
 
 .nav {
   background: #61afef;
-  /* grid-area: nav; */
 }
 
 .main {
   background: #98c379;
-  /* grid-area: main; */
 }
 
 .aside {
   background: #e5c07b;
-  /* grid-area: aside; */
 }
 
 .footer {
   background: #c678dd;
-  /* grid-column: 1 / -1; */
-  /* grid-area: footer; */
 }
 
 .nav ul {
@@ -188,9 +173,6 @@ h3 {
      Try changing the numbers:
          minmax(200px, 1fr)   |   minmax(150px, 1fr)
      ------------------------------------------------------------ */
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-  /* gap: 16px; */
 }
 
 .card {
@@ -222,9 +204,6 @@ h3 {
          justify-content: space-between  |  flex-start  |  center
          align-items: center  |  flex-start  |  flex-end
      ------------------------------------------------------------ */
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
 }
 
 .tag {
