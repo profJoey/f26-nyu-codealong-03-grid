@@ -87,6 +87,23 @@ h3 {
   color: #333;
 }
 
+/* The bottom row of each card: a tag on the left, a link on
+   the right. Base styles only — we lay it out with flex in Step 7. */
+.card-footer {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ddd;
+}
+
+.tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #eee;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
 /* ============================================================
    🧪 CSS GRID PLAYGROUND — STEP BY STEP
    ============================================================
@@ -191,6 +208,21 @@ h3 {
    Our second use case. Uncomment below, then resize your
    browser window — the cards reflow on their own.
 
+   How does this work? Read the line right-to-left:
+
+     minmax(200px, 1fr)  →  each column is AT LEAST 200px wide,
+                            but can grow to share leftover space
+     repeat(...)         →  make as many of those columns as fit
+     auto-fit            →  fit as many as possible, then collapse
+                            any empty tracks
+
+   So the browser does the math on every resize:
+     wide screen  → 6 columns (all cards in one row)
+     medium       → 3 columns (cards wrap to two rows)
+     narrow       → 1 column  (cards stack)
+
+   No @media breakpoints needed. That's the whole point.
+
    Try changing the numbers:
        minmax(200px, 1fr)   |   minmax(150px, 1fr)
    ------------------------------------------------------------ */
@@ -200,4 +232,26 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
+} */
+
+
+/* ------------------------------------------------------------
+   STEP 7 — Grid and Flex, Working Together
+   ------------------------------------------------------------
+   Grid and flex aren't rivals — they're teammates. The rule of
+   thumb: GRID for the layout, FLEX for the components inside it.
+
+   Each card has a "card-footer" row with a tag on the left and
+   a link on the right. That's a one-dimensional row, so it's a
+   job for flex. Uncomment below and try:
+
+       justify-content: space-between  |  flex-start  |  center
+       align-items: center  |  flex-start  |  flex-end
+   ------------------------------------------------------------ */
+
+
+/* .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 } */

@@ -106,3 +106,25 @@ h3 {
   padding: 1rem;
   color: #333;
 }
+
+/* The bottom row of each card: a tag on the left, a link on
+   the right. Base styles only — laid out with flex below. */
+.card-footer {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ddd;
+
+  /* --- Flexbox: grid for the layout, flex for the component --- */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #eee;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
