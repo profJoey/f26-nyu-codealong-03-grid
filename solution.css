@@ -34,17 +34,12 @@ h3 {
   min-height: calc(100vh - 4rem);
   padding: 1rem;
 
-  /* STEP 1 — Turn on Grid */
-  display: grid;
+  display: grid; /* Make the page's direct children grid items. */
+  grid-template-columns: 1fr 3fr 1fr; /* Give the middle column 3x each side column's share. */
+  grid-template-rows: auto 1fr auto; /* Let header/footer fit content; main row fills remaining height. */
+  gap: 16px; /* Add space between grid rows and columns. */
 
-  /* STEP 2 — Define Your Columns */
-  grid-template-columns: 1fr 3fr 1fr;
-
-  /* STEP 3 — Add Rows and Gaps */
-  grid-template-rows: auto 1fr auto;
-  gap: 16px;
-
-  /* STEP 5 — Name Your Areas */
+  /* Each string is a row; repeating an area name makes it span columns. */
   grid-template-areas:
     "header header header"
     "nav    main   aside"
@@ -64,38 +59,27 @@ h3 {
 
 .header {
   background: #e06c75;
-
-  /* STEP 4 — Span Items Across Tracks */
-  grid-column: 1 / -1;
-
-  /* STEP 5 — Assign the Header to Its Area */
-  grid-area: header;
+  grid-area: header; /* Place this item in the matching named page area. */
 }
 
 .nav {
   background: #61afef;
-  /* STEP 5 — grid-area: nav; */
-  grid-area: nav;
+  grid-area: nav; /* Match this name to the nav slot in .page's template. */
 }
 
 .main {
   background: #98c379;
-  /* STEP 5 — grid-area: main; */
-  grid-area: main;
+  grid-area: main; /* Match this name to the main slot in .page's template. */
 }
 
 .aside {
   background: #e5c07b;
-  /* STEP 5 — grid-area: aside; */
-  grid-area: aside;
+  grid-area: aside; /* Match this name to the aside slot in .page's template. */
 }
 
 .footer {
   background: #c678dd;
-  /* STEP 4 — grid-column: 1 / -1; */
-  grid-column: 1 / -1;
-  /* STEP 5 — grid-area: footer; */
-  grid-area: footer;
+  grid-area: footer; /* The named area already spans all three columns. */
 }
 
 .nav ul {
@@ -110,10 +94,9 @@ h3 {
 .cards {
   margin-top: 1.5rem;
 
-  /* STEP 6 — Responsive Cards, No Media Queries */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  display: grid; /* Lay out cards in rows and columns. */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Fit as many 200px-minimum columns as possible. */
+  gap: 16px; /* Keep consistent spacing between cards. */
 }
 
 .card {
@@ -131,10 +114,9 @@ h3 {
   padding-top: 0.75rem;
   border-top: 1px solid #ddd;
 
-  /* STEP 7 — Grid and Flex, Working Together */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Arrange the tag and link in one row. */
+  justify-content: space-between; /* Push the first and last items to opposite ends. */
+  align-items: center; /* Align both items along the row's center line. */
 }
 
 .tag {
